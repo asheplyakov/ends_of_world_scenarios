@@ -10,6 +10,7 @@
 \usepackage{sidecap}
 \usepackage{caption}
 \usepackage{chemformula}
+\usepackage{xcolor}
 
 \title[End of the World scenarios]{Ends of the World are coming}
 
@@ -61,25 +62,35 @@ Any natural phenomenon which
 
 \begin{frame}
 \frametitle{City killers}
-\begin{itemize}
-\item An object with $D < 10 \mathrm{m}$ vaporizes in the atmosphere
-\item Rocks with a diameter 20 -- 100 m hit the surface.
-\end{itemize}
-
-\begin{block}{Is it really that bad?}
-\begin{itemize}
-\item $\rho \sim 3000 \: \mathrm{kg/m^3}$ (granite)
-\item $v \sim 30 - 80 \: \mathrm{km/sec}$ (typical speed of Solar system objects)
-\end{itemize}
-$E = \frac{m v^2}{2} = \frac{2}{3} \pi \rho R^3 v^2 \sim 10 \: \mathrm{MT}$,
-where $1 \: \mathrm{MT} = 4.18 \cdot 10^{15} \mathrm{J}$.
-\end{block}
-\begin{block}{This happens roughly once a century}
+\only<1>{
+\begin{center}
+\includegraphics[height=0.82\textheight]{img/chelyabinsk_meteor.jpg}
+\end{center}
+}
+\only<2>{
+\begin{columns}[c]
+\column{0.5\textwidth}
+\includegraphics[width=0.95\textwidth]{img/chelyabinsk_meteor_2.jpg}
+\begin{block}{Once a century}
 \begin{itemize}
 \item 2013 Chelyabinsk meteor 
 \item 1908 Tunguska event
 \end{itemize}
 \end{block}
+\column{0.5\textwidth}
+\begin{block}{Kinetic wheapons}
+$E = \frac{m v^2}{2} = \frac{2}{3} \pi \rho R^3 v^2$ \\
+$\rho \sim 3000 \: \mathrm{kg/m^3}$ {\small (granite)} \\
+$v \sim 30 - 80 \: \mathrm{km/sec}$ {\small (Solar system bodies)} \\
+{\Large \color{red} $E \sim 10 \: \mathrm{MT}$} \\
+$1 \: \mathrm{MT} = 4.18 \cdot 10^{15} \mathrm{J}$
+\end{block}
+\begin{block}{Size matters}
+$D < 10 \, \mathrm{m}$: vaporizes in the atmosphere \\
+$D \geq 20 - 100 \, \mathrm{m}$: hits the surface \\
+\end{block}
+\end{columns}
+}
 \end{frame}
 
 \begin{frame}
