@@ -10,11 +10,19 @@
 \usepackage{sidecap}
 \usepackage{caption}
 \usepackage[utf8]{inputenc}
-\usepackage[english,russian]{babel}
 \usepackage[T2A]{fontenc}
+\usepackage{chemformula}
+%%%
+% XXX: the Russian module for babel defines \ch for the hyperbolic cosine operator.
+% This conflicts chemformula \ch. Alas babel defines \ch as a "robust"
+% command and my TeX-foo is not enough to undefine it. Instead I "rename"
+% chemformula's \ch to \Ch to avoid the problem.
+\let\Ch\ch
+\let\ch\relax
+%%%
+\usepackage[russian,english]{babel}
 \usepackage[warn]{mathtext}
 \usepackage{xcolor}
-%\usepackage{chemformula}
 
 \title[Армагеддон был вчера]{Армагеддон был вчера}
 
@@ -262,14 +270,18 @@ $D \geq 20 - 100 \, \mathrm{\text{м}}$: наземный бабах
 \begin{block}{Базальт}
 \begin{itemize}
 \item Большинство вулканических пород, океаническая кора
-\item 47 -- 52\% SiO2, 14 --18\% Al2O3, {\bf 6 --12\% CaO}
+\item 47 -- 52\% $\Ch{SiO2}$, 14 --18\% $\Ch{Al2O3}$, {\bf 6 --12\% $\Ch{CaO}$}
 \end{itemize}
 \end{block}
 Атмосферный CO2 медленно превращается в известняки:
+\begin{displaymath}
+\nonumber
+\Ch{CaSiO3} + \Ch{CO2} + \Ch{H2O} \to 2 \Ch{HCO3-} + \Ch{Ca^{2+}} + \Ch{SiO2}
+\end{displaymath}
 
 \begin{itemize}
 \item Скорость реакции быстро растёт с температурой
-\item Концентрация CO2 через 600 млн. лет: 50 ЧНМ (сейчас: 400 ЧНМ)
+\item Концентрация $\Ch{CO2}$ через 600 млн. лет: 50 ЧНМ (сейчас: 400 ЧНМ)
 \item 50 ЧНМ не достаточно для $C_3$ фиксации
 \item Подавляющее большинство растений живут за счёт $C_3$ процесса
 \item Растения использующие $C_4$ фиксацию вымрут ещё через 200~млн.~лет
