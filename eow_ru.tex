@@ -1,4 +1,6 @@
 \documentclass[aspectratio=169]{beamer}
+\setbeamertemplate{navigation symbols}{}
+\mode<beamer>{\setbeamertemplate{blocks}[rounded][shadow=true]}
 
 \mode<presentation> {
 \usetheme{Goettingen}
@@ -23,6 +25,11 @@
 \usepackage[russian,english]{babel}
 \usepackage[warn]{mathtext}
 \usepackage{xcolor}
+\usepackage{chngpage}
+\usepackage{calc}
+\RequirePackage[absolute, overlay]{textpos}
+\setlength{\TPHorizModule}{\paperwidth}
+\setlength{\TPVertModule}{\paperheight}
 
 \title[Армагеддон был вчера]{Армагеддон был вчера}
 
@@ -42,10 +49,26 @@
 \end{frame}
 }
 
+{
+\usebackgroundtemplate{%
+\vbox to \paperheight{%
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{img/chelyabinsk_meteor.jpg}
+\vfill
+}}
 \begin{frame}
-\frametitle{Введение}
-\tableofcontents
+\begin{columns}[T]
+\column{0.5\textwidth}
+{\setbeamercolor{structure}{fg=brown!20}
+\vspace{10pt}%
+\tableofcontents}
+\column{0.5\textwidth}
+\vbox to \paperheight{
+\vspace{10pt}
+\vfill
+}
+\end{columns}
 \end{frame}
+}
 
 \section{Определение и классификация}
 
@@ -71,28 +94,28 @@
       \end{itemize}
 \end{block}
 \column{0.45\textwidth}
-\only<1>{
-\includegraphics[width=0.95\textwidth]{img/chelyabinsk_meteor_2.jpg}
-}
-\only<2>{
 \includegraphics[width=0.95\textwidth]{img/crab_nebula_web_print.jpg}
-}
 \end{columns}
 \end{frame}
 
 \section{Столкновения с астероидами}
 
 \begin{frame}
-\frametitle{Тепло и свет в каждый дом}
-\only<1>{
-\begin{center}
-\includegraphics[height=0.82\textheight]{img/chelyabinsk_meteor.jpg}
-\end{center}
-}
-\only<2>{
-\begin{columns}[c]
+\frametitle{Столкновения с астероидами}
+\begin{columns}[T]
 \column{0.5\textwidth}
 \includegraphics[width=0.95\textwidth]{img/chelyabinsk_meteor_2.jpg}
+\column{0.5\textwidth}
+\begin{block}{Хорошо, что пополам}
+$E = \frac{m v^2}{2} = \frac{2}{3} \pi \rho R^3 v^2$ \\
+$\rho \sim 3000 \: \mathrm{\text{кг}/\text{м}^3}$ {\small (гранит)} \\
+$v \sim 30 - 80 \: \mathrm{\text{км}/\text{сек}}$ {\small (Солнечная система)} \\
+{\Large \color{red} $E \sim 10 \: \mathrm{\text{МТ}}$} \\
+$1 \: \mathrm{\text{МТ}} = 4.18 \cdot 10^{15} \mathrm{\text{Дж}}$
+\end{block}
+\end{columns}
+\begin{columns}[c]
+\column{0.5\textwidth}
 \begin{block}{Один раз в 100 лет}
 \begin{itemize}
 \item 2013 Челябинский метеорит
@@ -100,20 +123,14 @@
 \end{itemize}
 \end{block}
 \column{0.5\textwidth}
-\begin{block}{Хорошо, что пополам}
-$E = \frac{m v^2}{2} = \frac{2}{3} \pi \rho R^3 v^2$ \\
-$\rho \sim 3000 \: \mathrm{\text{кг}/\text{м}^3}$ {\small (гранит)} \\
-$v \sim 30 - 80 \: \mathrm{\text{км}/\text{сек}}$ {\small (тела Солнечной системы)} \\
-{\Large \color{red} $E \sim 10 \: \mathrm{\text{МТ}}$} \\
-$1 \: \mathrm{\text{МТ}} = 4.18 \cdot 10^{15} \mathrm{\text{Дж}}$
-\end{block}
 \begin{block}{Размер имеет значение}
 $D < 10 \, \mathrm{\text{м}}$: испаряются в атмосфере
 $D \geq 20 - 100 \, \mathrm{\text{м}}$: наземный бабах
 \end{block}
 \end{columns}
-}
+%}
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Никто не уйдёт обиженный}
@@ -121,21 +138,21 @@ $D \geq 20 - 100 \, \mathrm{\text{м}}$: наземный бабах
 \begin{block}{Диаметр $\sim 500 \: \mathrm{\text{м}}$ (раз в $\sim 50000$ лет)}
 \begin{itemize}
 \item Энерговыделение: разом взорвать весь (термо)ядерный арсенал.
-\item Достаточно, чтобы опустошить целый континент.
+\item Хватит на целый континент.
 \end{itemize}
 \end{block}
 
 \begin{block}{Диаметр 2 -- 3 км (раз в несколько миллионов лет)}
 \begin{itemize}
 \item Выбрасывает и распыляет огромные массы земной коры.
-\item Пыль остаётся в атмосфере годы и вызывает глобальное похолодание.
+\item Пыль остаётся в атмосфере годы -- глобальное похолодание.
 \end{itemize}
 \end{block}
 
-\begin{block}{Диаметр 5 -- 10 км (примерно раз в 100 миллионов лет)}
+\begin{block}{Диаметр 5 -- 10 км (раз в $\sim 100$ миллионов лет)}
 \begin{itemize}
 \item Ядерная зима на десятилетия, закисление океанов
-\item Предположительная причина мело-палеогенового вымирания (бедные динозаврики)
+\item Мело-палеогенового вымирание (бедные динозаврики)
 \end{itemize}
 \end{block}
 \end{frame}
