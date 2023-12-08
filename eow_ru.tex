@@ -334,17 +334,26 @@ $D \geq 20 - 100 \, \mathrm{\text{м}}$: наземный бабах
 
 
 \section{Слияние Млечного Пути и Андромеды}
-\begin{frame}
-\frametitle{Слияние галактик}
-\begin{figure}
-\includegraphics[width=\textwidth]{img/NGC2623.jpg}
-\captionsetup{labelformat=empty}
-\caption{NGC2623, 255 млн. св. лет}
-\end{figure}
+{
+\setbeamertemplate{navigation symbols}{}
+\usebackgroundtemplate{%
+\vbox to \paperheight{%
+\vspace*{30pt}
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{img/NGC2623.jpg}
+\vfill
+}}
+\begin{frame}[fragile]
+\frametitle{Слияние галактик, NGC 2623}
+\begin{textblock}{0.5}(0.05,0.35)
+\begin{centering}
+\textcolor{red}{255 млн. св. лет}
+\end{centering}
+\end{textblock}
 \end{frame}
+}
 
 \begin{frame}
-\frametitle{Млечный Путь и Андромеда}
+\frametitle{Слияние галактик, Млечный Путь и Андромеда}
 \only<1>{
 \begin{figure}
 \includegraphics[width=\textwidth]{img/20120929_andromeda_collision_1-present_hs-2012-20-c_f840.png}
